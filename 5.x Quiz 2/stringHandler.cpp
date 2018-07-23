@@ -20,3 +20,20 @@ bool isTypeY() {
         }
     }
 }
+
+int getNumber(int numTry) {
+    while (true) {
+        std::cout << "Guess #" << numTry << ": ";
+        int guessNum;
+        std::cin >> guessNum;
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(32767,'\n');
+            std::cout << "Oops, that input is invalid.  Please try again." << '\n';
+        }
+        else {
+            std::cin.ignore(32767,'\n');
+            return guessNum;
+        }
+    }
+}

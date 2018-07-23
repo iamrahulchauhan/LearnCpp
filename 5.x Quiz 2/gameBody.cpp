@@ -1,12 +1,12 @@
 #include "gameBody.h"
 #include "constants.h"
+#include "stringHandler.h"
 #include <iostream>
 
 Result gameBody(int totalTry, int answerNum) {
     int guessNum{0};
     for (int numTry{1}; numTry <= totalTry; ++numTry) {
-        std::cout << "Guess #" << numTry << ": ";
-        std::cin >> guessNum;
+        guessNum = getNumber(numTry);
         if (guessNum == answerNum) {
             return Result::WIN;
         }
