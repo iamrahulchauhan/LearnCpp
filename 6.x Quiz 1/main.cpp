@@ -1,17 +1,5 @@
 #include <iostream>
-
-enum Item {
-    ITEM_HEALTH_POTION,
-    ITEM_TORCH,
-    ITEM_ARROW,
-    ITEM_N_ITEM
-};
-
-namespace playerConstant {
-    const int initHealthPotion{2};
-    const int initTorch{5};
-    const int initArrow{10};
-}
+#include "player.h"
 
 int countTotalItems(int carriedItem[]) {
     int totalItem{0};
