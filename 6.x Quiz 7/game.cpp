@@ -3,47 +3,33 @@
 #include <array>
 #include <iostream>
 
-bool playBlackJack(const std::array<Card, 52> &deck) {
+Result playBlackJack(const std::array<Card, 52> &deck) {
     const Card *cardPtr{&deck[0]};
     int playerScore{0};
     int dealerScore{0};
 
     //dealer gets one card and player gets two cards to start
-    dealerScore += getCardValue(*cardPtr++);
-    playerScore += getCardValue(*cardPtr++);
-    playerScore += getCardValue(*cardPtr++);
+    dealerScore += getCardValue(*cardPtr++, dealerScore);
+    playerScore += getCardValue(*cardPtr++, playerScore);
+    playerScore += getCardValue(*cardPtr++, playerScore);
 
     //player's turn
     do {
-        switch (isBust(dealerScore, playerScore)) {
-            case Result::PLAYER_LOSE:
-                return false;
-            case Result::DEALER_LOSE:
-                return true;
-            default:
-                break;
-        }
+        Result bust{isBust(dealerScore, playerScore)};
+        if (bust != Result::NEITHER_LOSE) return bust;
         char standOrHit{getChoice()};
         if (standOrHit == 's') break;
-        else playerScore += getCardValue(*cardPtr++);
+        else playerScore += getCardValue(*cardPtr++, playerScore);
     } while (true);
 
     //dealer's turn
     do {
         if (dealerScore < 17) {
-            dealerScore += getCardValue(*cardPtr++);
+            dealerScore += getCardValue(*cardPtr++, dealerScore);
         }
         else break;
     } while (true);
-    switch (isOver(dealerScore, playerScore)) {
-        case Result::PLAYER_LOSE:
-            return false;
-        case Result::DEALER_LOSE:
-            return true;
-        default:
-            std::cout << "Unexpected result here. -- from playBlackJack" << '\n';
-            return false;
-    }
+    return isOver(dealerScore, playerScore);
 }
 
 void showScore(int dealerScore, int playerScore) {
@@ -56,13 +42,13 @@ Result isBust(int dealerScore, int playerScore) {
     if ((dealerScore > 21) && (playerScore > 21)) return Result::PLAYER_LOSE;
     else if (playerScore > 21) return Result::PLAYER_LOSE;
     else if (dealerScore > 21) return Result::DEALER_LOSE;
-    else return Result::NOTHING;
+    else return Result::NEITHER_LOSE;
 }
 
 Result isOver(int dealerScore, int playerScore) {
     Result bust{isBust(dealerScore, playerScore)};
-    if (bust != Result::NOTHING) return bust;
-    else if (dealerScore == playerScore) return Result::PLAYER_LOSE;
+    if (bust != Result::NEITHER_LOSE) return bust;
+    else if (dealerScore == playerScore) return Result::NEITHER_LOSE;
     else if (dealerScore > playerScore) return Result::PLAYER_LOSE;
     else if (dealerScore < playerScore) return Result::DEALER_LOSE;
 }

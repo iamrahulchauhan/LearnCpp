@@ -108,7 +108,8 @@ void shuffleDeck(std::array<Card, 52> &deck) {
     }
 }
 
-int getCardValue(const Card &card) {
+int getCardValue(const Card &card, int score) {
+    if ((card.rank == Rank::ACE) && (score > 10)) return 1;
     switch (card.rank) {
         case Rank::TWO:
         case Rank::THREE:

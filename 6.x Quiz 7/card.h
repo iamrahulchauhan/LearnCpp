@@ -38,6 +38,6 @@ std::array<Card, 52> initialDeck();
 void printDeck(const std::array<Card, 52> &deck);
 void swapCard(Card &card1, Card &card2);
 void shuffleDeck(std::array<Card, 52> &deck);
-int getCardValue(const Card &card);
+int getCardValue(const Card &card, int score);
 
 #endif

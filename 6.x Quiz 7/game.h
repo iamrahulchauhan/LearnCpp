@@ -7,10 +7,10 @@
 enum class Result {
     PLAYER_LOSE,
     DEALER_LOSE,
-    NOTHING
+    NEITHER_LOSE
 };
 
-bool playBlackJack(const std::array<Card, 52> &deck);
+Result playBlackJack(const std::array<Card, 52> &deck);
 void showScore(int dealerScore, int playerScore);
 Result isBust(int dealerScore, int playerScore);
 Result isOver(int dealerSocre, int playerScore);
