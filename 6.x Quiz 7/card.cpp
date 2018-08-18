@@ -71,15 +71,13 @@ void printCard(const Card &card) {
     std::cout << rank << suit;
 }
 
-std::array<Card, 52> initialDeck() {
-    std::array<Card, 52> deck;
+void initialDeck(std::array<Card, 52> &deck) {
     for (int rankIndex{0}; rankIndex < 13; ++rankIndex) {
         for (int suitIndex{0}; suitIndex < 4; ++suitIndex) {
             deck[suitIndex * 13 + rankIndex].rank = static_cast<Rank>(rankIndex + 1);
             deck[suitIndex * 13 + rankIndex].suit = static_cast<Suit>(suitIndex);
         }
     }
-    return deck;
 }
 
 void printDeck(const std::array<Card, 52> &deck) {

@@ -4,7 +4,8 @@
 #include "card.h"
 
 int main() {
-    std::array<Card, 52> deck = initialDeck();
+    std::array<Card, 52> deck;
+    initialDeck(deck);
 
     char isContinue{'y'};
     do {

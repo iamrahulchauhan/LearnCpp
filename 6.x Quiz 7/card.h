@@ -34,7 +34,7 @@ struct Card {
 };
 
 void printCard(const Card &card);
-std::array<Card, 52> initialDeck();
+void initialDeck(std::array<Card, 52> &deck);
 void printDeck(const std::array<Card, 52> &deck);
 void swapCard(Card &card1, Card &card2);
 void shuffleDeck(std::array<Card, 52> &deck);
