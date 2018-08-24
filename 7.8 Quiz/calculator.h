@@ -11,7 +11,7 @@ struct arithmeticStruct {
 };
 
 int add(int value1, int value2);
-int substract(int value1, int value2);
+int subtract(int value1, int value2);
 int multiply(int value1, int value2);
 int divide(int value1, int value2);
 
@@ -24,7 +24,7 @@ int divide(int value1, int value2);
 
 static const arithmeticStruct g_arithmeticArray[] {
 	{ '+', add },
-	{ '-', substract },
+	{ '-', subtract },
 	{ '*', multiply },
 	{ '/', divide }
 };
