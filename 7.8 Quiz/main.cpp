@@ -1,6 +1,7 @@
 #include <iostream>
 #include "inputHandler.h"
 #include "calculator.h"
+#include <array>
 
 int main() {
     int value1 = numberInput();

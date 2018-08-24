@@ -17,11 +17,7 @@ int divide(int value1, int value2) {
 }
 
 arithmeticFcn getArithmetricFunction(char oper) {
-    switch (oper) {
-        case '+': return add;
-        case '-': return substract;
-        case '*': return multiply;
-        case '/': return divide;
-        default: return add;
+    for (const arithmeticStruct arithmetic : g_arithmeticArray) {
+        if (oper == arithmetic.oper) return arithmetic.fcnPtr;
     }
 }
