@@ -1,0 +1,58 @@
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:6:15: error: 'm_maxLength' does not name a type
+     constexpr m_maxLength {10};
+               ^~~~~~~~~~~
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:7:21: error: 'm_maxLength' was not declared in this scope
+     std::array<int, m_maxLength> m_array;
+                     ^~~~~~~~~~~
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:7:32: error: template argument 2 is invalid
+     std::array<int, m_maxLength> m_array;
+                                ^
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp: In member function 'void Stack::reset()':
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:12:22: error: 'begin' was not declared in this scope
+         for (int i : m_array) i = 0;
+                      ^~~~~~~
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:12:22: note: suggested alternative:
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string:51:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.h:40,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h:41,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:1:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\range_access.h:105:37: note:   'std::begin'
+   template<typename _Tp> const _Tp* begin(const valarray<_Tp>&);
+                                     ^~~~~
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:12:22: error: 'end' was not declared in this scope
+         for (int i : m_array) i = 0;
+                      ^~~~~~~
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:12:22: note: suggested alternative:
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string:51:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.h:40,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h:41,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:1:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\range_access.h:107:37: note:   'std::end'
+   template<typename _Tp> const _Tp* end(const valarray<_Tp>&);
+                                     ^~~
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp: In member function 'bool Stack::push(int)':
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:15:25: error: 'm_maxLength' was not declared in this scope
+         if (m_length == m_maxLength) return false;
+                         ^~~~~~~~~~~
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:17:31: error: invalid types 'int[int]' for array subscript
+             m_array[m_length++] = num;
+                               ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cassert:44:0,
+                 from C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:3:
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp: In member function 'int Stack::pop()':
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:22:47: error: 'm_maxLength' was not declared in this scope
+         assert((m_length > 0) && (m_length <= m_maxLength) && "Can not pop empty stack");
+                                               ^
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:23:34: error: invalid types 'int[int]' for array subscript
+         return m_array[--m_length];
+                                  ^
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp: In member function 'void Stack::print()':
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:27:82: error: invalid types 'int[int]' for array subscript
+         for (int index = 0; index < m_length; ++index) std::cout << m_array[index] << " ";
+                                                                                  ^
