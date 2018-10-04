@@ -1,9 +1,24 @@
-C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:6:15: error: 'm_maxLength' does not name a type
-     constexpr m_maxLength {10};
-               ^~~~~~~~~~~
-C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:7:21: error: 'm_maxLength' was not declared in this scope
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:6:34: error: non-static data member 'm_maxLength' declared 'constexpr'
+     constexpr int m_maxLength {10};
+                                  ^
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:7:21: error: invalid use of non-static data member 'Stack::m_maxLength'
      std::array<int, m_maxLength> m_array;
                      ^~~~~~~~~~~
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:6:34: note: declared here
+     constexpr int m_maxLength {10};
+                                  ^
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:7:21: error: invalid use of non-static data member 'Stack::m_maxLength'
+     std::array<int, m_maxLength> m_array;
+                     ^~~~~~~~~~~
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:6:34: note: declared here
+     constexpr int m_maxLength {10};
+                                  ^
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:7:21: error: invalid use of non-static data member 'Stack::m_maxLength'
+     std::array<int, m_maxLength> m_array;
+                     ^~~~~~~~~~~
+C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:6:34: note: declared here
+     constexpr int m_maxLength {10};
+                                  ^
 C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:7:32: error: template argument 2 is invalid
      std::array<int, m_maxLength> m_array;
                                 ^
@@ -37,18 +52,10 @@ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\range_access.h:107:37: note:   '
    template<typename _Tp> const _Tp* end(const valarray<_Tp>&);
                                      ^~~
 C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp: In member function 'bool Stack::push(int)':
-C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:15:25: error: 'm_maxLength' was not declared in this scope
-         if (m_length == m_maxLength) return false;
-                         ^~~~~~~~~~~
 C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:17:31: error: invalid types 'int[int]' for array subscript
              m_array[m_length++] = num;
                                ^
-In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cassert:44:0,
-                 from C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:3:
 C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp: In member function 'int Stack::pop()':
-C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:22:47: error: 'm_maxLength' was not declared in this scope
-         assert((m_length > 0) && (m_length <= m_maxLength) && "Can not pop empty stack");
-                                               ^
 C:\Users\tommy\Desktop\LearnCpp\8.3 Quiz 3\main.cpp:23:34: error: invalid types 'int[int]' for array subscript
          return m_array[--m_length];
                                   ^
