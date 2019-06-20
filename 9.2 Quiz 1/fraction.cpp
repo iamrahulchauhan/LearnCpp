@@ -17,9 +17,9 @@ int Fraction::gcd(int a, int b) {
 }
 
 void Fraction::reduce() {
-    int gcd = gcd(m_numerator, m_denominator);
-    m_numerator /= gcd;
-    m_denominator /= gcd;
+    int gcdNum = gcd(m_numerator, m_denominator);
+    m_numerator /= gcdNum;
+    m_denominator /= gcdNum;
 }
 
 Fraction operator*(const Fraction &frac1, const Fraction &frac2) {
