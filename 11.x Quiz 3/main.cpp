@@ -21,7 +21,7 @@ int main() {
 			break;
 		}
 		else if (player.hasWon()) {
-			std::cout << "\nYou won! Congratulation!\n";
+			std::cout << "\nYou won! Congratulations!\n";
 			std::cout << "You reached level 20 and got " << player.getGold() << " gold!\n";
 			std::cout << "Hope you have a nice time with this game! :)\n";
 			break;
