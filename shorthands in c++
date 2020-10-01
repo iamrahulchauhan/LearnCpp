@@ -1,0 +1,23 @@
+//optimizing code with short hands
+//asuuming all required header files
+
+int a=10;
+int b=10;
+
+int i;
+ 
+for(i=0,i<10,i++)
+ a=a+b;
+ 
+ cout<<a;
+ 
+ or
+ 
+ for(i=0,i<10,i++)
+ a+=b;
+ 
+ cout<<a;
+ 
+ 
+ //thankyou
+ 
